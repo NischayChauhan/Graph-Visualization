@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="p5.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.sound.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      #plotter{
+        position: relative;
+        float: right;
+        margin:20px;
+      }
+    </style>
+</head>
+  <body>
+
+<div class="jumbotron text-center" style="margin-bottom: 5px;">
+  <h1>Visualization of path finding algorithms</h1>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+
+    <div class="form-group">
+      <label>Rows: </label>
+      <input type="text" id="ygrid" value="20" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Cols: </label>
+      <input type="text" id="xgrid"  value="20" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Algorithm:  </label>
+        <select id="algo" class="form-control">
+          <option value="bfs">BFS</option>
+          <option value="dfs">DFS</option>
+          <option value="">Dijkstra</option>
+          <option value="">A*</option>
+        </select>
+    </div>
+
+
+    <label>Start Cordinates:: </label>
+    <div class="form-group form-inline">
+      <label> X:&nbsp; </label> <input type="text" id="sx" value="0" class="form-control" />
+      <label> &nbsp; Y:&nbsp;  </label> <input type="text" id="sy" value="0" class="form-control" />
+    </div>
+
+    <label>End Cordinates:: </label>
+    <div class="form-group form-inline">
+      <label> X:&nbsp; </label> <input type="text" id="ex" value="19" class="form-control" />
+      <label> &nbsp; Y:&nbsp;  </label> <input type="text" id="ey" value="19" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Pixel Size: </label>
+       <input type="text" id="px"  value="20" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Obstacle Rate: </label>
+       <input type="text" id="obs"  value="0.08" class="form-control" />
+    </div>
+    
+      <button type="button" onclick="getInputValue();">Run</button>
+    </div>
+    <div class="col">
+      <div id="plotter"></div>
+    </div>
+  </div>
+</div>
+
+    <script src="sketch.js"></script>
+
+  </body>
+</html>
